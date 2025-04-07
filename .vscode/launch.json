@@ -1,0 +1,25 @@
+{
+  // Use IntelliSense para saber los atributos posibles.
+  // Mantenga el puntero para ver las descripciones de los existentes atributos.
+  // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "request": "launch",
+      "name": "Launch Server",
+      "type": "node",
+      "program": "${workspaceFolder}/server.ts",
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "runtimeExecutable": "/home/gouda/.deno/bin/deno",
+      "runtimeArgs": [
+        "run",
+        "--watch",
+        "--unstable-kv",
+        "--inspect-wait",
+        "--allow-net"
+      ],
+      "attachSimplePort": 9229
+    }
+  ]
+}

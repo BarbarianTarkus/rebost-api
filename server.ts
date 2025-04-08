@@ -1,39 +1,20 @@
-import { Application, Context, Router } from "@oak/oak";
-import { createProduct, getProduct, getProducts, Product } from "./db.ts";
+import { Application } from "@oak/oak";
+import { green, yellow } from "https://deno.land/std@0.53.0/fmt/colors.ts";
+
+import productRouter from "./routes/product.ts";
 
 const app = new Application();
-const api = new Router();
+const port = 8693;
 
-api.get("/", (ctx) => {
-  ctx.response.body = "Hello World!";
-});
-api.get("/products", async (ctx) => {
-  const products: Product[] = await getProducts();
-  ctx.response.body = JSON.stringify(products);
-});
+app.use(productRouter.routes());
+app.use(productRouter.allowedMethods());
 
-api.get("/products/:name", async (ctx) => {
-  const product: Product = await getProduct(ctx.params.name);
-  ctx.response.body = JSON.stringify(product);
-});
-
-api.post("/create", async (ctx: Context) => {
-  const body = await ctx.request.body.json();
-
-  const product: Product = {
-    name: body.name,
-    quantity: body.quantity,
-  };
-
-  const newProduct: Product = await createProduct(
-    product.name,
-    product.quantity,
+app.addEventListener("listen", ({ secure, hostname, port }) => {
+  const protocol = secure ? "https://" : "http://";
+  const url = `${protocol}${hostname ?? "localhost"}:${port}`;
+  console.log(
+    `${yellow("Listening on:")} ${green(url)}`,
   );
-
-  ctx.response.body = newProduct;
 });
 
-app.use(api.routes());
-app.use(api.allowedMethods());
-
-await app.listen({ port: 8693 });
+await app.listen({ port });

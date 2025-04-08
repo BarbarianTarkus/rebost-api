@@ -1,5 +1,13 @@
 {
   "imports": {
     "@oak/oak": "jsr:@oak/oak@^17.1.4"
+  },
+  "deploy": {
+    "project": "56153ef8-7334-4879-aa91-8c9c4f24ed6c",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "server.ts"
   }
 }

@@ -4,7 +4,15 @@ This is a API server for my test app with denoKV called `rebost`
 
 # Quickstart
 
-Start server (hardcoded on port `8693`):
+- Clone and Install Dependencies:
+
+```
+git clone https://github.com/BarbarianTarkus/rebost-api.git
+
+deno install
+```
+
+- Start server (hardcoded on port `8693`):
 
 ```
 deno run --watch --allow-net --unstable-kv server.ts

@@ -12,7 +12,7 @@ const X_RESPONSE_TIME: string = "X-Response-Time";
 export default {
   logger: async (
     { response, request }: Context,
-    next: () => Promise<void>,
+    next: () => Promise<unknown>,
   ) => {
     await next();
     const responseTime = response.headers.get(X_RESPONSE_TIME);
@@ -21,7 +21,7 @@ export default {
   },
   responseTime: async (
     { response }: Context,
-    next: () => Promise<void>,
+    next: () => Promise<unknown>,
   ) => {
     const start = Date.now();
     await next();

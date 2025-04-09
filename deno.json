@@ -3,11 +3,15 @@
     "@oak/oak": "jsr:@oak/oak@^17.1.4",
     "controllers/": "./src/controllers/",
     "interfaces/": "./src/interfaces/",
+    "jose": "npm:jose@^6.0.10",
     "middlewares/": "./src/middlewares/",
-    "routes/": "./src/routes/"
+    "routes/": "./src/routes/",
+    "models/": "./src/models/",
+    "yup": "npm:yup@^1.6.1"
   },
   "tasks": {
-    "start": "deno run --allow-net --allow-read --allow-env --unstable-kv --watch ./src/server.ts",
+    "start": "deno run --allow-net --allow-read --allow-env --allow-read --allow-env --unstable-kv --watch ./src/server.ts",
+    "debug": "deno run --unstable-kv --inspect-wait --allow-net --allow-read --allow-env --watch src/server.ts",
     "test": "deno test --allow-read --allow-net --unstable-kv --watch ./src/server.ts ",
     "lint": "deno lint --compact --fix --unstable-kv"
   },

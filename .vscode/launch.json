@@ -5,18 +5,28 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach to Deno",
+      "type": "node",
+      "request": "attach",
+      "restart": true,
+      "port": 9229
+    },
+    {
       "request": "launch",
       "name": "Launch Server",
       "type": "node",
-      "program": "${workspaceFolder}/server.ts",
+      "program": "${workspaceFolder}/src/server.ts",
       "cwd": "${workspaceFolder}",
       "env": {},
       "runtimeExecutable": "deno",
       "runtimeArgs": [
         "run",
         "--unstable-kv",
-        "--inspect-wait",
-        "--allow-net"
+        "--inspect-brk",
+        "--allow-net",
+        "--allow-read",
+        "--allow-env",
+        "--watch"
       ],
       "attachSimplePort": 9229
     }

@@ -1,4 +1,4 @@
-import { Context } from "node:vm";
+import { Context } from "@oak/oak";
 
 export default ({ response }: Context) => {
   response.status = 404;

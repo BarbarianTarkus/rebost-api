@@ -2,7 +2,7 @@ import { Router } from "@oak/oak";
 
 const router = new Router();
 
-import productController from "../controllers/product.ts";
+import productController from "controllers/product.ts";
 
 router
   .get("/products", productController.getAllProducts)

@@ -1,13 +1,31 @@
 {
   "imports": {
-    "@oak/oak": "jsr:@oak/oak@^17.1.4"
+    "@oak/oak": "jsr:@oak/oak@^17.1.4",
+    "controllers/": "./src/controllers/",
+    "interfaces/": "./src/interfaces/",
+    "middlewares/": "./src/middlewares/",
+    "routes/": "./src/routes/"
+  },
+  "tasks": {
+    "start": "deno run --allow-net --allow-read --allow-env --unstable-kv --watch ./src/server.ts",
+    "test": "deno test --allow-read --allow-net --unstable-kv --watch ./src/server.ts ",
+    "lint": "deno lint --compact --fix --unstable-kv"
+  },
+  "lint": {
+    "include": ["src/"],
+    "exclude": [".vscode", "node_modules"],
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": []
+    }
   },
   "deploy": {
     "project": "56153ef8-7334-4879-aa91-8c9c4f24ed6c",
     "exclude": [
       "**/node_modules"
     ],
-    "include": [],
-    "entrypoint": "server.ts"
+    "include": ["src/**"],
+    "entrypoint": "./src/server.ts"
   }
 }

@@ -11,7 +11,7 @@
       "program": "${workspaceFolder}/server.ts",
       "cwd": "${workspaceFolder}",
       "env": {},
-      "runtimeExecutable": "/home/gouda/.deno/bin/deno",
+      "runtimeExecutable": "deno",
       "runtimeArgs": [
         "run",
         "--unstable-kv",

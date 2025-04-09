@@ -4,7 +4,8 @@ import {
   green,
   white,
 } from "https://deno.land/std@0.53.0/fmt/colors.ts";
-import { Context } from "node:vm";
+
+import { Context } from "@oak/oak";
 
 const X_RESPONSE_TIME: string = "X-Response-Time";
 

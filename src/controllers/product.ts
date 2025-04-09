@@ -1,5 +1,4 @@
-import { Context } from "node:vm";
-import { Product } from "../interfaces/Product.ts";
+import { Product } from "interfaces/Product.ts";
 import { Context } from "@oak/oak";
 
 const kv = await Deno.openKv();
@@ -56,7 +55,10 @@ export default {
     }
   },
   getProductById: async (
-    { params, response }: { params: { id: string }; response: Context },
+    { params, response }: {
+      params: { id: string };
+      response: Context["response"];
+    },
   ) => {
     const { id } = params;
     try {
@@ -83,8 +85,8 @@ export default {
   updateProductById: async (
     { params, request, response }: {
       params: { id: string };
-      request: Context;
-      response: Context;
+      request: Context["request"];
+      response: Context["response"];
     },
   ) => {
     const { id } = params;
@@ -116,7 +118,10 @@ export default {
       };
     }
   },
-  deleteProductById: async ({ params, response }: Context) => {
+  deleteProductById: async ({ params, response }: {
+    params: { id: string };
+    response: Context["response"];
+  }) => {
     const { id } = params;
     try {
       const res = await kv.get(["products", id]);

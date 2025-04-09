@@ -1,7 +1,7 @@
 import { Application } from "@oak/oak";
 import { green, yellow } from "https://deno.land/std@0.53.0/fmt/colors.ts";
 
-import productRouter from "./routes/product.ts";
+import productRouter from "routes/product.ts";
 
 const app = new Application();
 const port = 8693;

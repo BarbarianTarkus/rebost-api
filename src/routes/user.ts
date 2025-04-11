@@ -1,5 +1,5 @@
-import { Router } from "@oak/oak";
-import { hello, login, me, signup } from "controllers/user.ts";
+import { Router } from "jsr:@oak/oak@^17.1.4";
+import { hello, login, me, signup } from "../controllers/user.ts";
 
 const router = new Router();
 

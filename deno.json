@@ -1,6 +1,6 @@
 {
   "imports": {
-    "@oak/oak": "jsr:@oak/oak@^17.1.4",
+    "jsr:@oak/oak@^17.1.4": "jsr:@oak/oak@^17.1.4",
     "controllers/": "./src/controllers/",
     "interfaces/": "./src/interfaces/",
     "jose": "npm:jose@^6.0.10",

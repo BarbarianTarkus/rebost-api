@@ -5,7 +5,7 @@ import {
   white,
 } from "https://deno.land/std@0.53.0/fmt/colors.ts";
 
-import { Context } from "@oak/oak";
+import { Context } from "jsr:@oak/oak@^17.1.4";
 
 const X_RESPONSE_TIME: string = "X-Response-Time";
 

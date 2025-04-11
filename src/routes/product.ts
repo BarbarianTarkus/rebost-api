@@ -1,8 +1,8 @@
-import { Router } from "@oak/oak";
+import { Router } from "jsr:@oak/oak@^17.1.4";
 
 const router = new Router();
 
-import productController from "controllers/product.ts";
+import productController from "../controllers/product.ts";
 
 router
   .get("/products", productController.getAllProducts)

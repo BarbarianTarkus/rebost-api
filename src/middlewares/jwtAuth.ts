@@ -1,7 +1,7 @@
-import { Context } from "@oak/oak";
+import { Context } from "jsr:@oak/oak@^17.1.4";
 import { validateJwt } from "../helpers.ts";
-import { User } from "interfaces/User.ts";
-import { UserModel } from "models/user.ts";
+import { User } from "../interfaces/User.ts";
+import { UserModel } from "../models/user.ts";
 
 export async function handleAuthHeader(
   ctx: Context<{ user: Omit<User, "password"> | null }>,

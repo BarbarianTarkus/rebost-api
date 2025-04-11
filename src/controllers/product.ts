@@ -1,5 +1,5 @@
-import { Product } from "interfaces/Product.ts";
-import { Context } from "@oak/oak";
+import { Product } from "../interfaces/Product.ts";
+import { Context } from "jsr:@oak/oak@^17.1.4";
 
 const kv = await Deno.openKv();
 

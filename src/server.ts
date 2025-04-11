@@ -1,10 +1,10 @@
 import { green, yellow } from "https://deno.land/std@0.53.0/fmt/colors.ts";
-import { Application } from "@oak/oak";
+import { Application } from "jsr:@oak/oak@^17.1.4";
 
-import productRouter from "routes/product.ts";
-import userRouter from "routes/user.ts";
-import logger from "middlewares/logger.ts";
-import notFound from "middlewares/notFound.ts";
+import productRouter from "./routes/product.ts";
+import userRouter from "./routes/user.ts";
+import logger from "./middlewares/logger.ts";
+import notFound from "./middlewares/notFound.ts";
 
 const app = new Application();
 const port = 8693;

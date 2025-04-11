@@ -1,7 +1,7 @@
-import { Context } from "@oak/oak";
+import { Context } from "jsr:@oak/oak@^17.1.4";
 import * as yup from "npm:yup";
-import { User } from "interfaces/User.ts";
-import { UserModel } from "models/user.ts";
+import { User } from "../interfaces/User.ts";
+import { UserModel } from "../models/user.ts";
 import { generateJwt, validateJwt } from "../helpers.ts";
 
 export function hello(ctx: Context) {
